@@ -3,18 +3,27 @@
 
 using namespace std;
 
-int countCharacter(string str) {
-    return str.length();
+int countVowel(string str) {
+    int count = 0;
+    for (char c : str) {
+     
+        char lowercaseChar = tolower(c);
+     
+        if (lowercaseChar == 'a' || lowercaseChar == 'e' || lowercaseChar == 'i' ||
+            lowercaseChar == 'o' || lowercaseChar == 'u') {
+            count++;
+        }
+    }
+    return count;
 }
 
 int main() {
-    string testString1 = "Hello, world!";
-    string testString2 = "This is a test string.";
-    string testString3 = "";
+  
+    string testString1 = "Hello, World!";
+    string testString2 = "This is a test string";
 
-    cout << "Number of characters in testString1: " << countCharacter(testString1) << endl;
-    cout << "Number of characters in testString2: " << countCharacter(testString2) << endl;
-    cout << "Number of characters in testString3: " << countCharacter(testString3) << endl;
+    cout << "Number of vowels in \"" << testString1 << "\": " << countVowel(testString1) << endl;
+    cout << "Number of vowels in \"" << testString2 << "\": " << countVowel(testString2) << endl;
 
     return 0;
 }
