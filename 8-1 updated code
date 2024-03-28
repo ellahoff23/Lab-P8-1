@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int countCharacter(const string& str) {
+    return str.length();
+}
+
+int countVowel(const string& str) {
+    int vowelCount = 0;
+    for (char c : str) {
+        if (c == 'a' || c == 'A' || c == 'e' || c == 'E' ||
+            c == 'i' || c == 'I' || c == 'o' || c == 'O' ||
+            c == 'u' || c == 'U') {
+            vowelCount++;
+        }
+    }
+    return vowelCount;
+}
+
+int main() {
+    string input;
+    while (true) {
+        cout << "Enter a string or Q to quit: ";
+        getline(cin, input);
+
+        if (input == "Q") {
+            break;
+        }
+
+        int vowels = countVowel(input);
+        cout << "\nVowel count: " << vowels << endl;
+    }
+
+    return 0;
+}
